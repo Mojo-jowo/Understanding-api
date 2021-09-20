@@ -1,0 +1,24 @@
+{
+  "name": "apifromnodejs",
+  "version": "1.0.0",
+  "description": "api from node js",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "backend",
+    "weather",
+    "app"
+  ],
+  "author": "Andrew Lewis",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "nedb": "^1.8.0",
+    "node-fetch": "^3.0.0"
+  }
+}

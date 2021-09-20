@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>ALL DATA</h1>
+
+    <div class="links">
+        <a href="./index.html">index</a>
+        <a href="./all.html">All</a>
+    </div>
+
+    <script>
+        async function getData() {
+            const response = await fetch('/api');
+            const data = await response.json();
+
+            data.map( item => {
+
+            
+                const root = document.createElement('div');
+                const date = document.createElement('div');
+                const geo = document.createElement('div');
+                
+    
+                const dateString = new Date(item.timestamp).toLocaleString();
+                date.textContent = dateString;
+                geo.textContent = `${item.lat}, ${item.lon}`;
+
+                root.append( geo, date );
+                document.body.append(root);
+            
+            });
+            
+            
+
+            console.log(data);
+        }
+        getData();
+
+       
+    </script>
+    
+</body>
+</html>
+
